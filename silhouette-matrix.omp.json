@@ -163,6 +163,9 @@
           "background": "#1a4d2e",
           "foreground": "#4ecca3",
           "powerline_symbol": "\ue0c4",
+          "properties": {
+            "linux": ""
+          },
           "style": "powerline",
           "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
           "type": "os"

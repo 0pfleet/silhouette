@@ -8,7 +8,8 @@
       "segments": [
         {
           "properties": {
-            "cache_duration": "none"
+            "cache_duration": "none",
+            "linux": ""
           },
           "template": "{{ if .WSL }}WSL {{ end }}{{ .Icon }} ",
           "foreground": "#26C6DA",
