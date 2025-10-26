@@ -72,29 +72,103 @@ cd silhouette
 3. Run the appropriate setup script for your platform
 4. Enjoy a consistent prompt everywhere!
 
+## Available Themes
+
+Silhouette includes three theme variants. All themes display the same information but with different color schemes:
+
+### 1. **silhouette.omp.json** (Original - Simple & Clean)
+- Minimalist single-line prompt
+- Cyan and green accents
+- Best for: Those who prefer a compact, traditional prompt
+
+### 2. **silhouette-hacker.omp.json** (Hacker Green)
+- Dark green (#1a4d2e) and bright green (#4ecca3) color scheme
+- Matrix-inspired aesthetic
+- Best for: Terminal enthusiasts who love the classic green-on-black look
+
+### 3. **silhouette-sunset.omp.json** (Burnt Orange/Tan)
+- Warm burnt orange (#8b4513) and wheat/tan (#f5deb3) colors
+- Earthy, easy-on-the-eyes palette
+- Best for: Those who prefer warmer, mellow tones
+
+All themes show:
+- Current directory path
+- Git branch and status
+- Machine/user information
+- OS icon and WSL detection
+- Command execution time
+- Battery status (on supported systems)
+- Current date/time
+
+## Switching Themes
+
+The setup scripts default to the original `silhouette.omp.json`. To use a different theme:
+
+### Linux / WSL / Raspberry Pi
+
+Edit your shell configuration file:
+
+```bash
+# For bash users
+nano ~/.bashrc
+
+# For zsh users
+nano ~/.zshrc
+```
+
+Find the line with `oh-my-posh init` and change the config path:
+
+```bash
+# Change from:
+eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/silhouette.omp.json)"
+
+# To one of:
+eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/silhouette-hacker.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/silhouette-sunset.omp.json)"
+```
+
+Then copy your chosen theme and restart your shell:
+
+```bash
+cp silhouette-hacker.omp.json ~/.config/ohmyposh/silhouette-hacker.omp.json
+source ~/.bashrc  # or ~/.zshrc
+```
+
+### Windows
+
+Edit your PowerShell profile:
+
+```powershell
+notepad $PROFILE
+```
+
+Find the line with `oh-my-posh init` and change the config path:
+
+```powershell
+# Change from:
+oh-my-posh init pwsh --config "$env:USERPROFILE\.config\ohmyposh\silhouette.omp.json" | Invoke-Expression
+
+# To one of:
+oh-my-posh init pwsh --config "$env:USERPROFILE\.config\ohmyposh\silhouette-hacker.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:USERPROFILE\.config\ohmyposh\silhouette-sunset.omp.json" | Invoke-Expression
+```
+
+Then copy your chosen theme and restart PowerShell:
+
+```powershell
+Copy-Item silhouette-hacker.omp.json "$env:USERPROFILE\.config\ohmyposh\silhouette-hacker.omp.json"
+. $PROFILE
+```
+
 ## Customization
 
-To customize the prompt:
+To create your own theme variant:
 
-1. Edit `silhouette.omp.json`
-2. Refer to the [Oh My Posh documentation](https://ohmyposh.dev/docs/configuration/overview) for available options
-3. Re-run the setup script or restart your shell to apply changes
-
-## Theme Preview
-
-The Silhouette theme displays:
-
-```
-🐧 /home/user/projects/silhouette main*  ✓
-❯
-```
-
-- OS icon (Linux penguin, Windows logo, Apple logo)
-- WSL indicator (if in WSL)
-- Full current path
-- Git branch with modified indicator (*)
-- Execution time (if >500ms)
-- Success/failure indicator (✓/✗)
+1. Copy one of the existing theme files (e.g., `cp silhouette-hacker.omp.json my-theme.omp.json`)
+2. Edit the colors, segments, or layout
+3. Refer to the [Oh My Posh documentation](https://ohmyposh.dev/docs/configuration/overview) for available options
+4. Update your shell config to point to your custom theme
+5. Restart your shell to apply changes
 
 ## Uninstallation
 
