@@ -81,12 +81,12 @@ Silhouette includes three theme variants. All themes display the same informatio
 - Cyan and green accents
 - Best for: Those who prefer a compact, traditional prompt
 
-### 2. **silhouette-hacker.omp.json** (Hacker Green)
+### 2. **silhouette-matrix.omp.json** (Matrix)
 - Dark green (#1a4d2e) and bright green (#4ecca3) color scheme
 - Matrix-inspired aesthetic
 - Best for: Terminal enthusiasts who love the classic green-on-black look
 
-### 3. **silhouette-sunset.omp.json** (Burnt Orange/Tan)
+### 3. **silhouette-sepia.omp.json** (Sepia)
 - Warm burnt orange (#8b4513) and wheat/tan (#f5deb3) colors
 - Earthy, easy-on-the-eyes palette
 - Best for: Those who prefer warmer, mellow tones
@@ -123,14 +123,14 @@ Find the line with `oh-my-posh init` and change the config path:
 eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/silhouette.omp.json)"
 
 # To one of:
-eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/silhouette-hacker.omp.json)"
-eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/silhouette-sunset.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/silhouette-matrix.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/silhouette-sepia.omp.json)"
 ```
 
 Then copy your chosen theme and restart your shell:
 
 ```bash
-cp silhouette-hacker.omp.json ~/.config/ohmyposh/silhouette-hacker.omp.json
+cp silhouette-matrix.omp.json ~/.config/ohmyposh/silhouette-matrix.omp.json
 source ~/.bashrc  # or ~/.zshrc
 ```
 
@@ -149,14 +149,14 @@ Find the line with `oh-my-posh init` and change the config path:
 oh-my-posh init pwsh --config "$env:USERPROFILE\.config\ohmyposh\silhouette.omp.json" | Invoke-Expression
 
 # To one of:
-oh-my-posh init pwsh --config "$env:USERPROFILE\.config\ohmyposh\silhouette-hacker.omp.json" | Invoke-Expression
-oh-my-posh init pwsh --config "$env:USERPROFILE\.config\ohmyposh\silhouette-sunset.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:USERPROFILE\.config\ohmyposh\silhouette-matrix.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:USERPROFILE\.config\ohmyposh\silhouette-sepia.omp.json" | Invoke-Expression
 ```
 
 Then copy your chosen theme and restart PowerShell:
 
 ```powershell
-Copy-Item silhouette-hacker.omp.json "$env:USERPROFILE\.config\ohmyposh\silhouette-hacker.omp.json"
+Copy-Item silhouette-matrix.omp.json "$env:USERPROFILE\.config\ohmyposh\silhouette-matrix.omp.json"
 . $PROFILE
 ```
 
@@ -164,7 +164,7 @@ Copy-Item silhouette-hacker.omp.json "$env:USERPROFILE\.config\ohmyposh\silhouet
 
 To create your own theme variant:
 
-1. Copy one of the existing theme files (e.g., `cp silhouette-hacker.omp.json my-theme.omp.json`)
+1. Copy one of the existing theme files (e.g., `cp silhouette-matrix.omp.json my-theme.omp.json`)
 2. Edit the colors, segments, or layout
 3. Refer to the [Oh My Posh documentation](https://ohmyposh.dev/docs/configuration/overview) for available options
 4. Update your shell config to point to your custom theme

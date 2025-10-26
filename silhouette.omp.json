@@ -1,7 +1,5 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "version": 2,
-  "final_space": true,
   "console_title_template": "{{ .Shell }} in {{ .Folder }}",
   "blocks": [
     {
@@ -9,63 +7,77 @@
       "alignment": "left",
       "segments": [
         {
-          "type": "os",
-          "style": "plain",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "{{ if .WSL }}WSL {{ end }}{{ .Icon }} ",
           "foreground": "#26C6DA",
-          "template": "{{ if .WSL }}WSL {{ end }}{{ .Icon }} "
+          "type": "os",
+          "style": "plain"
         },
         {
-          "type": "path",
-          "style": "plain",
-          "foreground": "#66BB6A",
           "properties": {
+            "cache_duration": "none",
             "style": "full"
           },
-          "template": "{{ .Path }} "
+          "template": "{{ .Path }} ",
+          "foreground": "#66BB6A",
+          "type": "path",
+          "style": "plain"
         },
         {
-          "type": "git",
-          "style": "plain",
-          "foreground": "#FFB300",
           "properties": {
             "branch_icon": "",
+            "cache_duration": "none",
             "fetch_status": true
           },
-          "template": "{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} "
+          "template": "{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} ",
+          "foreground": "#FFB300",
+          "type": "git",
+          "style": "plain"
         },
         {
-          "type": "executiontime",
-          "style": "plain",
-          "foreground": "#AB47BC",
           "properties": {
-            "threshold": 500,
-            "style": "austin"
+            "cache_duration": "none",
+            "style": "austin",
+            "threshold": 500
           },
-          "template": "{{ .FormattedMs }} "
+          "template": "{{ .FormattedMs }} ",
+          "foreground": "#AB47BC",
+          "type": "executiontime",
+          "style": "plain"
         },
         {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "{{ if ne .Code 0 }}✗{{ else }}✓{{ end }} ",
+          "foreground": "#EF5350",
           "type": "exit",
           "style": "plain",
-          "foreground": "#EF5350",
           "foreground_templates": [
             "{{ if eq .Code 0 }}#66BB6A{{ end }}"
-          ],
-          "template": "{{ if ne .Code 0 }}✗{{ else }}✓{{ end }} "
+          ]
         }
       ]
     },
     {
       "type": "prompt",
       "alignment": "left",
-      "newline": true,
       "segments": [
         {
-          "type": "text",
-          "style": "plain",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❯ ",
           "foreground": "#78909C",
-          "template": "❯ "
+          "type": "text",
+          "style": "plain"
         }
-      ]
+      ],
+      "newline": true
     }
-  ]
+  ],
+  "version": 3,
+  "final_space": true
 }
