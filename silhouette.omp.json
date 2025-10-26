@@ -18,6 +18,15 @@
         },
         {
           "properties": {
+            "cache_duration": "none"
+          },
+          "template": "{{ .UserName }}@{{ .HostName }} ",
+          "foreground": "#29B6F6",
+          "type": "session",
+          "style": "plain"
+        },
+        {
+          "properties": {
             "cache_duration": "none",
             "style": "full"
           },

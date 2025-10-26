@@ -183,10 +183,10 @@
           "foreground": "#1a4d2e",
           "powerline_symbol": "\ue0b0",
           "properties": {
-            "display_host": false
+            "display_host": true
           },
           "style": "powerline",
-          "template": " {{ if .SSHSession }}\ueba9 {{ end }}{{ .UserName }} ",
+          "template": " {{ if .SSHSession }}\ueba9 {{ end }}{{ .UserName }}@{{ .HostName }} ",
           "type": "session"
         }
       ],
